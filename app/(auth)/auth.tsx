@@ -4,13 +4,13 @@ import {useState} from "react";
 import {useRouter} from "expo-router";
 import PhoneNumberField from '@/components/auth/phoneNumberField';
 import OtpField from '@/components/auth/otpField';
-import LangField from '@/components/auth/langField';
+import MediumSelection from '@/components/auth/mediumSelection';
 import AuthCarousel from '@/components/auth/authCarousel';
 
 enum AuthState {
     Number = 'number',
     OTP = 'otp',
-    Lang = 'lang',
+    Medium = 'medium',
 }
 
 const AuthScreen = () => {
@@ -23,10 +23,10 @@ const AuthScreen = () => {
                 return <PhoneNumberField onPress={() => setAuthState(AuthState.OTP)} />;
 
             case AuthState.OTP:
-                return <OtpField forward={() => router.replace("/(home)/home")} backward={() => setAuthState(AuthState.Number)} />;
+                return <OtpField forward={() => setAuthState(AuthState.Medium)} backward={() => setAuthState(AuthState.Number)} />;
 
-            case AuthState.Lang:
-                return <LangField onPress={() => router.replace("/(home)/home")} />;
+            case AuthState.Medium:
+                return <MediumSelection onPress={() => router.replace("/(home)/home")} />;
 
             default:
                 return <Text>❓ Unknown State</Text>;
