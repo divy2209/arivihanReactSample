@@ -75,7 +75,7 @@ const MediumSelection: React.FC<MediumSelectionProps> = ({ onPress }) => {
                 onLayout={() => {
                     if (dropdownRef.current && !dropdownLayout) {
                         dropdownRef.current.measure((x, y, width, height, pageX, pageY) => {
-                            setDropdownLayout({ x: pageX, y: pageY, width, height });
+                            setDropdownLayout({ x: x+10, y: y+580, width: 280, height });
                         });
                     }
                 }}
