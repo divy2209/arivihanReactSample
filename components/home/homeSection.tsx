@@ -1,5 +1,9 @@
 import React, {useState} from "react";
-import {Text, TouchableOpacity, View} from "react-native";
+import {Text, TouchableOpacity, View, Image} from "react-native";
+import HomeStudySection from "@/components/home/homeStudySection";
+import TestSeriesSection from "@/components/home/testSeriesSection";
+import ChampionsOfArivihan from "@/components/home/championsOfArivihan";
+import HighlightsOfTheWeek from "@/components/home/highlightsOfTheWeek";
 
 enum Tab {
     JEE= "JEE",
@@ -37,6 +41,12 @@ const HomeSection = () => {
                 <HomeSectionCta tab={Tab.JEE} selectedTab={selectedTab} onPress={() => setSelectedTab(Tab.JEE)} />
                 <HomeSectionCta tab={Tab.BOARD} selectedTab={selectedTab} onPress={() => setSelectedTab(Tab.BOARD)} />
             </View>
+
+            <HomeStudySection />
+            <TestSeriesSection />
+            <Image className="w-full h-[180px] mb-6" resizeMode="contain" source={require("@/assets/images/how_to_use_arivihan_img.png")} />
+            <ChampionsOfArivihan />
+            <HighlightsOfTheWeek />
         </View>
     );
 }

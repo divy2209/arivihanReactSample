@@ -43,7 +43,7 @@ const renderCarouselItem = ({ item }: {item: any}) => (
 const HomeCarousel = () => {
     const { width: screenWidth } = Dimensions.get('window');
     return (
-        <View className="mb-6">
+        <View className="mb-2">
             <Carousel
                 width={screenWidth}
                 height={180}
