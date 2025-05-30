@@ -12,6 +12,22 @@ export default function RootLayout() {
           name="(auth)/auth"
           options={{headerShown: false}}
       />
+      <Stack.Screen
+          name="(explore)/explore"
+          options={{headerShown: false}}
+      />
+      <Stack.Screen
+          name="(profile)/profile"
+          options={{headerShown: false}}
+      />
+      <Stack.Screen
+          name="(unnati)/unnati"
+          options={{headerShown: false}}
+      />
+      <Stack.Screen
+          name="(reels)/reels"
+          options={{headerShown: false}}
+      />
     </Stack>
   </>
 }
